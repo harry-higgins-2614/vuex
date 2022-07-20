@@ -49,6 +49,10 @@ export default {
         closeForm() {
             this.isCreating = false;
         },
+        resetForm() { 
+          this.titleText = '';
+          this.projectText = '';
+        },
         sendForm() {
             if (this.titleText.length > 0 && this.projectText.length > 0) {
                 const title = this.titleText;
@@ -59,6 +63,8 @@ export default {
                     done: false,
                 });
             }
+            
+            this.resetForm();
             this.isCreating = false;
         },
     },
